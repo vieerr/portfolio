@@ -1,3 +1,6 @@
+"use client";
+
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -9,38 +12,50 @@ import {
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
-const ProjectCard = ({ name, description, tech }) => {
+const ProjectCard = ({ name, description, tech, mainImg, repository, url }) => {
   return (
-    <Card>
+    <Card className="cursor-pointer hover:scale-105 transition-transform ">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
-        <CardDescription className="w-1/2 mx-auto">
-          {description}
-        </CardDescription>
+        <CardDescription className="mx-auto">{description}</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-2">
-        <div className="space-y-1">
+      <CardContent className=" space-y-2">
+        <div className="h-64 w-full relative ">
+          <Image
+            className="object-contain"
+            alt={`Ìmage for ${name} project`}
+            src={mainImg}
+            fill
+          />
+        </div>
+
+        <div>
           {tech.map((t) => (
-            <Label key={t} variant="secondary">
+            // todo add special styles to each one
+            <Badge className="mr-2" variant="neutral" key={t}>
               {t}
-            </Label>
+            </Badge>
           ))}
         </div>
       </CardContent>
       <CardFooter className="flex flex-row gap-20 justify-evenly ">
         <Button
-          variant="noShadow"
+          onClick={() => window.open(repository, "_blank")}
           className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
         >
           Code
         </Button>
-        <Button
-          variant="noShadow"
-          className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
-        >
-          Visit
-        </Button>
+
+        {url && (
+          <Button
+            onClick={() => window.open(url, "_blank")}
+            className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
+          >
+            Visit
+          </Button>
+        )}
       </CardFooter>
     </Card>
   );
