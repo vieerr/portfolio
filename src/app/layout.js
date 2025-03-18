@@ -1,5 +1,7 @@
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
 export const metadata = {
   title: "Create Next App",

@@ -58,19 +58,11 @@ const Projects = () => {
   ];
 
   return (
-    <Tabs defaultValue="projects" className="w-2/3 mx-auto">
-      <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="me">me</TabsTrigger>
-        <TabsTrigger value="projects">projects</TabsTrigger>
-        <TabsTrigger value="skills">skills</TabsTrigger>
-      </TabsList>
-      <TabsContent value="me"></TabsContent>
-      <TabsContent value="projects" className="grid grid-cols-2 gap-7">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} {...project} />
-        ))}
-      </TabsContent>
-    </Tabs>
+    <TabsContent value="projects" className="grid grid-cols-2 gap-7">
+      {projects.map((project) => (
+        <ProjectCard key={project.name} {...project} />
+      ))}
+    </TabsContent>
   );
 };
 
