@@ -1,28 +1,51 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+
+import Toggle from "@/components/toggle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import ProjectCard from "@/components/projectCard";
 
 export default function Home() {
+  const projects = [
+    {
+      name: "Dearmom",
+      description:
+        "web app that lets you write letters using your voice and send them to your loved ones.",
+      tech: ["React", "TailwindCSS", "Express", "MongoDB", "Google Cloud"],
+    },
+    {
+      name: "Decoded, your personality",
+      description:
+        "web app with an interactive 3d test to find out what's your MBTI personality ",
+      tech: ["React", "TailwindCSS", "Express", "MongoDB", "Google Cloud"],
+    },
+    {
+      name: "Automata",
+      description: "2D cellular automata simulator/interactive game ",
+      tech: ["Lua", "Love2D"],
+    },
+    {
+      name: "Pandemic",
+      description:
+        "simulation of the spread of a pandemic using SIR model (ODE system) ",
+      tech: ["Python", "FastAPI", "Unity", "C#"],
+    },
+    {
+      name: "Adogtame",
+      description:
+        " Web application to simplify the adoption process by centralizing information and facilitating communication between interested parties. ",
+      tech: ["React", "Nextjs", "Express", "MongoDB", "TailwindCSS", "DaisyUI"],
+    },
+    {
+      name: "Tecnirem",
+      description: "website for a architecture & interior design company",
+      tech: ["React", "Nextjs", "TailwindCSS", "DaisyUI"],
+    },
+  ];
+
   return (
-    <div className="flex flex-col items-center min-h-screen">
+    <div className=" flex flex-col items-center min-h-screen">
       <div>
+        <Toggle />
         <Image alt="logo" src={"vier.svg"} width={300} height={300}></Image>
       </div>
       <div className="w-screen">
@@ -32,79 +55,11 @@ export default function Home() {
             <TabsTrigger value="projects">projects</TabsTrigger>
             <TabsTrigger value="skills">skills</TabsTrigger>
           </TabsList>
-          <TabsContent value="me">
-            <Card>
-              <CardHeader>
-                <CardTitle>me</CardTitle>
-                <CardDescription>
-                  Make changes to your me here. Click save when youre done.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" defaultValue="Pedro Duarte" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="username">Username</Label>
-                  <Input id="username" defaultValue="@peduarte" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  variant="noShadow"
-                  className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
-                >
-                  Save changes
-                </Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-          <TabsContent value="projects">
-            <Card>
-              <CardHeader>
-                <CardTitle>projects</CardTitle>
-                <CardDescription className="w-1/2 mx-auto">
-                  {/* <Carousel className="w-1/2 mx-auto">
-                    <CarouselContent className="flex ">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <CarouselItem key={index}>
-                          <div className="p-[10px]">
-                            <Card className="shadow-none">
-                              <CardContent className="flex aspect-square items-center justify-center p-4">
-                                <span className="text-3xl font-base">
-                                  {index + 1}
-                                </span>
-                              </CardContent>
-                            </Card>
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                  </Carousel>{" "} */}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="current">Current projects</Label>
-                  <Input id="current" type="projects" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="new">New projects</Label>
-                  <Input id="new" type="projects" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  variant="noShadow"
-                  className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
-                >
-                  Save projects
-                </Button>
-              </CardFooter>
-            </Card>
+          <TabsContent value="me"></TabsContent>
+          <TabsContent value="projects" className="grid grid-cols-2 gap-7">
+            {projects.map((project) => (
+              <ProjectCard key={project.name} {...project} />
+            ))}
           </TabsContent>
         </Tabs>
       </div>
