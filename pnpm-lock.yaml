@@ -26,6 +26,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      devicon:
+        specifier: ^2.16.0
+        version: 2.16.0
       embla-carousel-react:
         specifier: ^8.5.2
         version: 8.5.2(react@19.0.0)
@@ -884,6 +887,9 @@ packages:
   detect-libc@2.0.3:
     resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
     engines: {node: '>=8'}
+
+  devicon@2.16.0:
+    resolution: {integrity: sha512-PE5a2HBNeN4av+Iu975OiiWEwS8LJPw5HAvlv0JUHb62jZTdYxTpz4ga+cQyvdtb3x1side2P9Sr1mmOmUkO/g==}
 
   didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -2714,6 +2720,8 @@ snapshots:
 
   detect-libc@2.0.3:
     optional: true
+
+  devicon@2.16.0: {}
 
   didyoumean@1.2.2: {}
 

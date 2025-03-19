@@ -5,10 +5,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Toggle from "@/components/toggle";
 import Projects from "@/components/projects";
 import Me from "@/components/me";
+import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <div className=" flex flex-col items-center min-h-screen pb-10">
+    <div className=" flex flex-col items-center min-h-screen">
       <div>
         <Toggle />
         <div className="flex text-white text-4xl font-bold absolute top-32 left-0 right-0 mx-auto w-full justify-around ">
@@ -17,7 +18,7 @@ export default function Home() {
         </div>
         <Image alt="logo" src={"vier.svg"} width={250} height={250}></Image>
       </div>
-      <div className="w-screen">
+      <div className="w-screen pb-10">
         <Tabs defaultValue="projects" className="w-2/3 mx-auto">
           <TabsList className="grid w-full grid-cols-3 h-fit">
             <TabsTrigger className="text-2xl" value="me">me</TabsTrigger>
@@ -26,6 +27,7 @@ export default function Home() {
           </TabsList>
           <Me />
           <Projects />
+          <Skills/>
         </Tabs>
       </div>
     </div>

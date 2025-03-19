@@ -1,5 +1,5 @@
-// "use client";
 import { Terminal } from "lucide-react";
+
 import { Button } from "./ui/button";
 import {
   Card,
