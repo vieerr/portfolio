@@ -6,28 +6,36 @@ import Toggle from "@/components/toggle";
 import Projects from "@/components/projects";
 import Me from "@/components/me";
 import Skills from "@/components/skills";
+import Marquee from "@/components/ui/marquee";
 
 export default function Home() {
+  const items = ['"When', "done", "well,", "software", "is", 'invisible."'];
   return (
-    <div className=" flex flex-col items-center min-h-screen">
+    <div className=" flex flex-col items-center min-h-screen ">
+      <div className="flex text-white text-4xl font-bold mx-auto w-full justify-around ">
+        <Marquee items={items} />
+      </div>
       <div>
         <Toggle />
-        <div className="flex text-white text-4xl font-bold absolute top-32 left-0 right-0 mx-auto w-full justify-around ">
-          <h2>&quot;when done well, </h2>
-          <h2>software is invisible&quot;</h2>
-        </div>
-        <Image alt="logo" src={"vier.svg"} width={250} height={250}></Image>
+
+        <Image alt="logo" src={"vier.svg"} width={200} height={200}></Image>
       </div>
       <div className="w-screen pb-10">
         <Tabs defaultValue="projects" className="w-2/3 mx-auto">
           <TabsList className="grid w-full grid-cols-3 h-fit">
-            <TabsTrigger className="text-2xl" value="me">me</TabsTrigger>
-            <TabsTrigger className="text-2xl" value="projects">projects</TabsTrigger>
-            <TabsTrigger className="text-2xl" value="skills">skills</TabsTrigger>
+            <TabsTrigger className="text-2xl" value="me">
+              me
+            </TabsTrigger>
+            <TabsTrigger className="text-2xl" value="projects">
+              projects
+            </TabsTrigger>
+            <TabsTrigger className="text-2xl" value="skills">
+              skills
+            </TabsTrigger>
           </TabsList>
           <Me />
           <Projects />
-          <Skills/>
+          <Skills />
         </Tabs>
       </div>
     </div>

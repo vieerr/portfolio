@@ -58,7 +58,7 @@ const Projects = () => {
   ];
 
   return (
-    <TabsContent value="projects" className="grid grid-cols-2 gap-7">
+    <TabsContent value="projects" className="grid md:grid-cols-2 grid-cols-1 gap-7">
       {projects.map((project) => (
         <ProjectCard key={project.name} {...project} />
       ))}
