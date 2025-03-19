@@ -21,15 +21,15 @@ export default function Home() {
         <Image alt="logo" src={"vier.svg"} width={200} height={200}></Image>
       </div>
       <div className="w-screen pb-10">
-        <Tabs defaultValue="projects" className="w-2/3 mx-auto">
+        <Tabs defaultValue="projects" className=" md:w-2/3 px-10 md:px-0 mx-auto">
           <TabsList className="grid w-full grid-cols-3 h-fit">
-            <TabsTrigger className="text-2xl" value="me">
+            <TabsTrigger className="text-lg md:text-2xl " value="me">
               me
             </TabsTrigger>
-            <TabsTrigger className="text-2xl" value="projects">
+            <TabsTrigger className="text-lg md:text-2xl " value="projects">
               projects
             </TabsTrigger>
-            <TabsTrigger className="text-2xl" value="skills">
+            <TabsTrigger className="text-lg md:text-2xl " value="skills">
               skills
             </TabsTrigger>
           </TabsList>

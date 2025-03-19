@@ -74,7 +74,7 @@ const Me = () => {
 
   return (
     <TabsContent value="me">
-      <Card className="w-full p-20">
+      <Card className="w-full md:p-20">
         <CardHeader>
           <CardTitle className="tracking-widest flex text-2xl items-center">
             <Terminal className="h-7 w-7 mr-4" /> Hi!&nbsp;
@@ -101,7 +101,7 @@ const Me = () => {
               <AccordionTrigger className="bg-white">
                 Education & certifications
               </AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 px-16">
+              <AccordionContent className="flex flex-col gap-4 md:px-16">
                 {education.map((item, index) => (
                   <a
                     href={item.link}
@@ -137,7 +137,7 @@ const Me = () => {
               <AccordionTrigger className="bg-white">
                 Languages
               </AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 px-16">
+              <AccordionContent className="flex flex-col gap-4 md:px-16">
                 {languages.map((lang, index) => (
                   <a
                     href={lang.url}
