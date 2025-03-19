@@ -30,7 +30,6 @@ const ProjectCard = ({ name, description, tech, mainImg, repository, url }) => {
             fill
           />
         </div>
-
         <div>
           {tech.map((t) => (
             // todo add special styles to each one

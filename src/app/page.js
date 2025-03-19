@@ -1,84 +1,33 @@
 import Image from "next/image";
 
-import Toggle from "@/components/toggle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProjectCard from "@/components/projectCard";
+
+import Toggle from "@/components/toggle";
+import Projects from "@/components/projects";
+import Me from "@/components/me";
+import Skills from "@/components/skills";
 
 export default function Home() {
-  const projects = [
-    {
-      name: "Dearmom",
-      description:
-        "web app that lets you write letters using your voice and send them to your loved ones.",
-      tech: ["React", "TailwindCSS", "Express", "MongoDB", "Google Cloud"],
-      mainImg: "/dearmom.jpg",
-      repository: "https://github.com/vieerr/dearmom",
-      url: "https://dearmom.vercel.app/",
-    },
-    {
-      name: "Decoded, your personality",
-      description:
-        "web app with an interactive 3d test to find out what's your MBTI personality ",
-      tech: ["React", "TailwindCSS", "Express", "MongoDB", "Google Cloud"],
-      mainImg: "/decoded.jpg",
-      repository: "https://github.com/vieerr/decoded_personality",
-      url: "https://decoded-personality.vercel.app/",
-    },
-    {
-      name: "Automata",
-      description: "2D cellular automata simulator/interactive game ",
-      tech: ["Lua", "Love2D"],
-      mainImg: "/automata.jpg",
-      repository: "https://github.com/vieerr/automata",
-      url: null,
-    },
-    {
-      name: "Pandemic",
-      description:
-        "simulation of the spread of a pandemic using SIR model (ODE system) ",
-      tech: ["Python", "FastAPI", "Unity", "C#"],
-      mainImg: "/pandemic.jpg",
-      repository: "https://pandemic-backend.vercel.app/docs",
-      url: "https://pandemic-backend.vercel.app/docs",
-    },
-    {
-      name: "Adogtame",
-      description:
-        " Web application to simplify the adoption process by centralizing information and facilitating communication between interested parties. ",
-      tech: ["React", "Nextjs", "Express", "MongoDB", "TailwindCSS", "DaisyUI"],
-      mainImg: "/adogtame.jpg",
-      repository: "https://github.com/vieerr/adogtame",
-      url: "https://adogtame-pi.vercel.app/",
-    },
-    {
-      name: "Tecnirem",
-      description: "website for a architecture & interior design company",
-      tech: ["React", "Nextjs", "TailwindCSS", "DaisyUI"],
-      mainImg: "/tecnirem.jpg",
-      repository: "https://github.com/vieerr/tecnirem",
-      url: "https://tecnirem-olivierpas13.vercel.app/",
-    },
-  ];
-
   return (
     <div className=" flex flex-col items-center min-h-screen">
       <div>
         <Toggle />
-        <Image alt="logo" src={"vier.svg"} width={300} height={300}></Image>
+        <div className="flex text-white text-4xl font-bold absolute top-32 left-0 right-0 mx-auto w-full justify-around ">
+          <h2>&quot;when done well, </h2>
+          <h2>software is invisible&quot;</h2>
+        </div>
+        <Image alt="logo" src={"vier.svg"} width={250} height={250}></Image>
       </div>
-      <div className="w-screen">
+      <div className="w-screen pb-10">
         <Tabs defaultValue="projects" className="w-2/3 mx-auto">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="me">me</TabsTrigger>
-            <TabsTrigger value="projects">projects</TabsTrigger>
-            <TabsTrigger value="skills">skills</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 h-fit">
+            <TabsTrigger className="text-2xl" value="me">me</TabsTrigger>
+            <TabsTrigger className="text-2xl" value="projects">projects</TabsTrigger>
+            <TabsTrigger className="text-2xl" value="skills">skills</TabsTrigger>
           </TabsList>
-          <TabsContent value="me"></TabsContent>
-          <TabsContent value="projects" className="grid grid-cols-2 gap-7">
-            {projects.map((project) => (
-              <ProjectCard key={project.name} {...project} />
-            ))}
-          </TabsContent>
+          <Me />
+          <Projects />
+          <Skills/>
         </Tabs>
       </div>
     </div>

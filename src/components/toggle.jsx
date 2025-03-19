@@ -17,14 +17,14 @@ export default function DarkModeToggle() {
   }
 
   return (
-    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+    <button className="absolute left-10 top-10" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
       {theme === "light" ? (
         <div className="absolute">
-          <LucideMoon className="h-6 w-6 text-primary" />
+          <LucideMoon className="h-10 w-10 text-primary" />
         </div>
       ) : (
         <div className="absolute">
-          <LucideSun className="h-6 w-6 text-primary" />
+          <LucideSun className="h-10 w-10 text-primary" />
         </div>
       )}
     </button>
