@@ -3,19 +3,15 @@ import { useState } from "react";
 import { TabsContent } from "@/components/ui/tabs";
 import ProjectCard from "@/components/projectCard";
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Button } from "./ui/button";
-import { Label } from "./ui/label";
-import { Card } from "./ui/card";
 import Filter from "./filter";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
 const Projects = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("All");
@@ -178,12 +174,28 @@ const Projects = () => {
             "Website",
           ]}
         />
-        <Button onClick={clearFilters}>Clear</Button>
+        <Button variant="reverse" onClick={clearFilters}>Clear</Button>
       </div>
 
-      {filteredProjects.map((project) => (
-        <ProjectCard key={project.name} {...project} />
-      ))}
+      <div className="hidden md:grid grid-cols-2 col-span-2 gap-7">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.name} {...project} />
+        ))}
+      </div>
+
+      <div className="md:hidden">
+        <Carousel className="w-full md:hidden ">
+          <CarouselContent>
+            {filteredProjects.map((project, index) => (
+              <CarouselItem key={index}>
+                <ProjectCard {...project} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </TabsContent>
   );
 };

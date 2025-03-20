@@ -1,5 +1,12 @@
-import { LucideFingerprint } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Card,
   CardContent,
@@ -11,9 +18,10 @@ import { TabsContent } from "./ui/tabs";
 import { LucideFileHeart } from "lucide-react";
 import { LucideFlower } from "lucide-react";
 import { LucideBoxes } from "lucide-react";
+import { Button } from "./ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 
 const Skills = () => {
-  // Define your skills in arrays with optional color
   const frontendSkills = [
     { name: "React", icon: "devicon-react-original", color: "#61DAFB" },
     {
@@ -65,44 +73,69 @@ const Skills = () => {
     { name: "Rust", icon: "devicon-rust-plain", color: "#000000" },
     { name: "Zig", icon: "devicon-zig-plain", color: "#F7A41D" },
     { name: "Go", icon: "devicon-go-plain", color: "#00ADD8" },
-    { name: "Microservices",
-        iconComp: <LucideBoxes/>,
-        color: "#6C63FF" },
+    {
+      name: "Microservices",
+      iconComp: <LucideBoxes />,
+      color: "#6C63FF",
+    },
     { name: "Docker", icon: "devicon-docker-plain", color: "#2496ED" },
 
     { name: "AWS", icon: "devicon-amazonwebservices-plain", color: "#FF9900" },
   ];
 
-
-
-  // Helper function to render skills
   const renderSkills = (skills) => {
     return skills.map((skill, index) => (
-      <Alert
-        key={index}
-        className="w-fit transition-all hover:scale-105 hover:shadow-lg"
-        style={{ backgroundColor: skill.color || "#FFFFFF", color: "#FFFFFF" }}
-      >
-        <AlertTitle className="flex flex-col gap-2 items-center">
+      <Dialog key={index} className="w-full">
+        <DialogTrigger
+          asChild
+          className="flex md:hidden md:w-fit transition-all hover:scale-105 hover:shadow-lg"
+          style={{
+            backgroundColor: skill.color || "#FFFFFF",
+            color: "#FFFFFF",
+          }}
+        >
+          <Button className=" flex-col md:gap-2 items-center w-full h-16">
+            {skill.icon ? (
+              <i className={`text-3xl ${skill.icon}`}></i>
+            ) : (
+              skill.iconComp
+            )}
+            <span className="hidden md:inline-block text-sm md:text-lg font-semibold break-all">
+              {skill.name}
+            </span>
+          </Button>
+        </DialogTrigger>
+        <Button
+          style={{
+            backgroundColor: skill.color || "#FFFFFF",
+            color: "#FFFFFF",
+          }}
+          className="hidden md:flex cursor-default flex-col md:gap-2 items-center w-fit h-20"
+        >
           {skill.icon ? (
-            <i
-              className={`text-4xl ${skill.icon}`}
-              style={{ color: "#FFFFFF" }}
-            ></i>
+            <i className={`text-xl md:text-2xl ${skill.icon}`}></i>
           ) : (
             skill.iconComp
           )}
-          <span className="text-lg font-semibold">{skill.name}</span>
-        </AlertTitle>
-      </Alert>
+          <span className="hidden md:inline-block text-sm md:text-lg font-semibold break-all">
+            {skill.name}
+          </span>
+        </Button>
+
+        <DialogContent className="md:hidden w-fit p-10">
+          <DialogHeader>
+            <DialogTitle className="text-center">{skill.name}</DialogTitle>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     ));
   };
 
   return (
     <TabsContent value="skills">
-      <Card className="w-full md:px-10 ">
+      <Card className="hidden md:block w-full md:px-10 ">
         <CardHeader>
-          <CardTitle className="tracking-widest flex text-2xl items-center">
+          <CardTitle className="tracking-widest flex md:text-2xl items-center">
             Skills
           </CardTitle>
           <CardDescription className="opacity-50 italic">
@@ -113,9 +146,11 @@ const Skills = () => {
           {/* Frontend Development */}
           <Card className="border-2 border-black ">
             <CardHeader>
-              <CardTitle className="text-2xl">Frontend Development</CardTitle>
+              <CardTitle className="md:text-2xl">
+                Frontend Development
+              </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
+            <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
               {renderSkills(frontendSkills)}
             </CardContent>
           </Card>
@@ -123,9 +158,9 @@ const Skills = () => {
           {/* Backend Development */}
           <Card className="border-2 border-black ">
             <CardHeader>
-              <CardTitle className="text-2xl">Backend Development</CardTitle>
+              <CardTitle className="md:text-2xl">Backend Development</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
+            <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
               {renderSkills(backendSkills)}
             </CardContent>
           </Card>
@@ -133,9 +168,9 @@ const Skills = () => {
           {/* Databases */}
           <Card className="border-2 border-black ">
             <CardHeader>
-              <CardTitle className="text-2xl">Databases</CardTitle>
+              <CardTitle className="md:text-2xl">Databases</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
+            <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
               {renderSkills(databaseSkills)}
             </CardContent>
           </Card>
@@ -143,9 +178,9 @@ const Skills = () => {
           {/* DevOps & Tools */}
           <Card className="border-2 border-black ">
             <CardHeader>
-              <CardTitle className="text-2xl">DevOps & Tools</CardTitle>
+              <CardTitle className="md:text-2xl">DevOps & Tools</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
+            <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
               {renderSkills(devOpsSkills)}
             </CardContent>
           </Card>
@@ -153,15 +188,85 @@ const Skills = () => {
           {/* Currently Learning */}
           <Card className="md:col-span-2 border-2 border-black ">
             <CardHeader>
-              <CardTitle className="text-2xl">Currently Learning</CardTitle>
+              <CardTitle className="md:text-2xl">Currently Learning</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
+            <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
               {renderSkills(learningSkills)}
             </CardContent>
           </Card>
-
         </CardContent>
       </Card>
+      <Carousel className="md:hidden">
+        <CarouselContent>
+          <CarouselItem>
+            {/* Frontend Development */}
+            <Card className="border-2 border-black ">
+              <CardHeader>
+                <CardTitle className="md:text-2xl">
+                  Frontend Development
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-2 px-14 md:flex place-items-center  flex-wrap gap-2 ">
+                {renderSkills(frontendSkills)}
+              </CardContent>
+            </Card>
+          </CarouselItem>
+
+          <CarouselItem>
+            {/* Backend Development */}
+            <Card className="border-2 border-black ">
+              <CardHeader>
+                <CardTitle className="md:text-2xl">
+                  Backend Development
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
+                {renderSkills(backendSkills)}
+              </CardContent>
+            </Card>
+          </CarouselItem>
+          <CarouselItem>
+            {/* Databases */}
+            <Card className="border-2 border-black ">
+              <CardHeader>
+                <CardTitle className="md:text-2xl">Databases</CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
+                {renderSkills(databaseSkills)}
+              </CardContent>
+            </Card>
+          </CarouselItem>
+
+          <CarouselItem>
+            {/* DevOps & Tools */}
+            <Card className="border-2 border-black ">
+              <CardHeader>
+                <CardTitle className="md:text-2xl">DevOps & Tools</CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
+                {renderSkills(devOpsSkills)}
+              </CardContent>
+            </Card>
+          </CarouselItem>
+
+          <CarouselItem>
+            {/* Currently Learning */}
+            <Card className="border-2 border-black ">
+              <CardHeader>
+                <CardTitle className="md:text-2xl">
+                  Currently Learning
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-3 md:flex flex-wrap gap-2">
+                {renderSkills(learningSkills)}
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        </CarouselContent>
+
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </TabsContent>
   );
 };
