@@ -1,4 +1,54 @@
-const Filters = () => {
+"use client";
+import { useEffect, useState } from "react";
+import Filter from "../filter";
+import { Button } from "../ui/button";
+
+const Filters = ({ setProjects, projects }) => {
+  const clearFilters = () => {
+    setSelectedLanguage("All");
+    setSelectedFrontend("All");
+    setSelectedBackend("All");
+    setSelectedOther("All");
+    setSelectedConcept("All");
+  };
+
+  const [selectedLanguage, setSelectedLanguage] = useState("All");
+  const [selectedFrontend, setSelectedFrontend] = useState("All");
+  const [selectedBackend, setSelectedBackend] = useState("All");
+  const [selectedOther, setSelectedOther] = useState("All");
+  const [selectedConcept, setSelectedConcept] = useState("All");
+
+  const filteredProjects = projects.filter((project) => {
+    const matchesLanguage =
+      selectedLanguage === "All" || project.tech.includes(selectedLanguage);
+    const matchesFrontend =
+      selectedFrontend === "All" || project.tech.includes(selectedFrontend);
+    const matchesBackend =
+      selectedBackend === "All" || project.tech.includes(selectedBackend);
+    const matchesOther =
+      selectedOther === "All" || project.tech.includes(selectedOther);
+    const matchesConcept =
+      selectedConcept === "All" || project.concept.includes(selectedConcept);
+
+    return (
+      matchesLanguage &&
+      matchesFrontend &&
+      matchesBackend &&
+      matchesOther &&
+      matchesConcept
+    );
+  });
+
+  useEffect(() => {
+    setProjects(filteredProjects);
+  }, [
+    selectedLanguage,
+    selectedFrontend,
+    selectedBackend,
+    selectedOther,
+    selectedConcept,
+  ]);
+
   return (
     <div className="hidden col-span-2 md:flex justify-between items-center flex-wrap ">
       <Filter
