@@ -16,7 +16,7 @@ import Image from "next/image";
 
 const ProjectCard = ({ name, description, tech, mainImg, repository, url }) => {
   return (
-    <Card className="cursor-pointer hover:scale-105 transition-transform ">
+    <Card className=" cursor-pointer hover:scale-105 transition-transform ">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <CardDescription className="mx-auto">{description}</CardDescription>

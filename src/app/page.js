@@ -9,7 +9,7 @@ import Skills from "@/components/skills";
 import Marquee from "@/components/ui/marquee";
 
 export default function Home() {
-  const items = ['"When', "done", "well,", "software", "is", 'invisible."'];
+  const items = ['"When', "done", "well,", "software", "is", 'invisible."', '- Bjarne', 'Stroustrup'];
   return (
     <div className=" flex flex-col items-center min-h-screen ">
       <div className="flex text-white text-4xl font-bold mx-auto w-full justify-around ">
