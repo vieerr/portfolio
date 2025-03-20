@@ -19,6 +19,7 @@ import {
 } from "./ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Me = () => {
   const education = [
@@ -72,16 +73,45 @@ const Me = () => {
     },
   ];
 
+  const social = [
+    {
+      name: "Github",
+      url: "https://github.com/vieerr",
+      icon: "devicon-github-original",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/olivier-paspuel-18909b244/",
+      icon: "devicon-linkedin-plain",
+    },
+  ];
+
   return (
     <TabsContent value="me">
-      <Card className="w-full p-20">
-        <CardHeader>
+      <Card className="w-full md:p-20 md:pt-5">
+        <CardHeader className="flex flex-col items-center">
+          <Avatar className="w-40 h-40">
+            <AvatarImage src="/pfp.jpg" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+
           <CardTitle className="tracking-widest flex text-2xl items-center">
             <Terminal className="h-7 w-7 mr-4" /> Hi!&nbsp;
             <Label>I'm Olivier Paspuel</Label>
           </CardTitle>
-          <CardDescription className="opacity-50 italic">
-            Based in Quito, Ecuador.{" "}
+          <CardDescription className="flex  flex-col items-center">
+            <p className="opacity-50 italic">Based in Quito, Ecuador. </p>
+
+            <div className="flex gap-3 mt-2">
+              {social.map((item, index) => (
+                <a href={item.url} target="_blank" rel="noreferrer" key={index}>
+                  <Button key={index}>
+                    <i className={`${item.icon} text-2xl `}></i>
+                    <Label className="cursor-pointer">{item.name}</Label>
+                  </Button>
+                </a>
+              ))}
+            </div>
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -101,7 +131,7 @@ const Me = () => {
               <AccordionTrigger className="bg-white">
                 Education & certifications
               </AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 px-16">
+              <AccordionContent className="flex flex-col gap-4 md:px-16">
                 {education.map((item, index) => (
                   <a
                     href={item.link}
@@ -137,7 +167,7 @@ const Me = () => {
               <AccordionTrigger className="bg-white">
                 Languages
               </AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 px-16">
+              <AccordionContent className="flex flex-col gap-4 md:px-16">
                 {languages.map((lang, index) => (
                   <a
                     href={lang.url}

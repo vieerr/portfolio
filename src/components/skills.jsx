@@ -100,7 +100,7 @@ const Skills = () => {
 
   return (
     <TabsContent value="skills">
-      <Card className="w-full px-10 ">
+      <Card className="w-full md:px-10 ">
         <CardHeader>
           <CardTitle className="tracking-widest flex text-2xl items-center">
             Skills
@@ -109,7 +109,7 @@ const Skills = () => {
             Technologies and tools I work with
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid grid-cols-2 gap-4">
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Frontend Development */}
           <Card className="border-2 border-black ">
             <CardHeader>
@@ -151,7 +151,7 @@ const Skills = () => {
           </Card>
 
           {/* Currently Learning */}
-          <Card className="col-span-2 border-2 border-black ">
+          <Card className="md:col-span-2 border-2 border-black ">
             <CardHeader>
               <CardTitle className="text-2xl">Currently Learning</CardTitle>
             </CardHeader>

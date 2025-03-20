@@ -2,6 +2,7 @@
 import { useTheme } from "next-themes";
 import { LucideMoon, LucideSun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 export default function DarkModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -17,7 +18,7 @@ export default function DarkModeToggle() {
   }
 
   return (
-    <button className="absolute left-10 top-10" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+    <Button size="lg"  className="absolute left-10 top-20" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
       {theme === "light" ? (
         <div className="absolute">
           <LucideMoon className="h-10 w-10 text-primary" />
@@ -27,6 +28,6 @@ export default function DarkModeToggle() {
           <LucideSun className="h-10 w-10 text-primary" />
         </div>
       )}
-    </button>
+    </Button>
   );
 }
