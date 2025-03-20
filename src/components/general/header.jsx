@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import Marquee from "./ui/marquee";
-import ThemeToggle from "./themeToggle";
+import Marquee from "../ui/marquee";
 
+import ThemeToggle from "./themeToggle";
 import { phrase } from "@/utils/info";
 
 const Header = () => {

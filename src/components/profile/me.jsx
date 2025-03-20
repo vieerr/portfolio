@@ -1,18 +1,19 @@
 import { Terminal } from "lucide-react";
 
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardTitle,
   CardHeader,
   CardDescription,
   CardContent,
-} from "./ui/card";
-import { Label } from "./ui/label";
-import { TabsContent } from "./ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { TabsContent } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { social } from "@/utils/info";
+
 import ExtraInfo from "./extraInfo";
 
 const Me = () => {

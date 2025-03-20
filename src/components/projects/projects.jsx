@@ -3,9 +3,9 @@ import { useState } from "react";
 
 import { TabsContent } from "@/components/ui/tabs";
 
-import ProjectCard from "@/components/projectCard";
-import Filters from "./projects/filters";
-import ProjectsCarousel from "./projects/projectsCarousel";
+import ProjectCard from "@/components/projects/projectCard";
+import Filters from "./filters";
+import ProjectsCarousel from "./projectsCarousel";
 
 import { projects as projectsInfo } from "@/utils/info";
 

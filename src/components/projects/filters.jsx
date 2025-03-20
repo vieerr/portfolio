@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Filter from "../filter";
+import Filter from "./filter";
 import { Button } from "../ui/button";
 
 const Filters = ({ setProjects, projects }) => {

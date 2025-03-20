@@ -4,8 +4,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card";
-import { TabsContent } from "./ui/tabs";
+} from "../ui/card";
+import { TabsContent } from "../ui/tabs";
 
 import SkillGroup from "./skillGroup";
 import SkillsCarousel from "./skillsCarousel";

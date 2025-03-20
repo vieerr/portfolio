@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { education, languages } from "@/utils/info";
 
 const ExtraInfo = () => {

@@ -1,5 +1,5 @@
 import { tabOptions } from "@/utils/info";
-import { TabsList, TabsTrigger } from "./ui/tabs";
+import { TabsList, TabsTrigger } from "../ui/tabs";
 
 const Menu = () => {
   return (

@@ -1,10 +1,10 @@
 import { Tabs } from "@/components/ui/tabs";
 
-import Projects from "@/components/projects";
-import Me from "@/components/me";
-import Skills from "@/components/skills";
-import Header from "@/components/header";
-import Menu from "@/components/menu";
+import Projects from "@/components/projects/projects";
+import Me from "@/components/profile/me";
+import Skills from "@/components/skills/skills";
+import Header from "@/components/general/header";
+import Menu from "@/components/general/menu";
 
 export default function Home() {
   return (

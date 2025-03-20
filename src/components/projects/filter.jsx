@@ -1,5 +1,5 @@
-import { Card } from "./ui/card";
-import { Label } from "./ui/label";
+import { Card } from "../ui/card";
+import { Label } from "../ui/label";
 import {
   Select,
   SelectContent,
@@ -8,7 +8,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "../ui/select";
 
 const Filter = ({ label, value, onChange, options }) => {
   return (

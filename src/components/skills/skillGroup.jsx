@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import TechCard from "./skills/techCard";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import TechCard from "./techCard";
 
 const SkillGroup = ({ skills, name }) => {
   const renderSkills = (skills) => {
