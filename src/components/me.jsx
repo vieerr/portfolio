@@ -36,6 +36,12 @@ const Me = () => {
       link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/9afa41cb41e70b7d7f8ed8a45c03a043",
     },
     {
+      name: "CS50",
+      institution: "Harvard University",
+      img: "/harvard.png",
+      link: "https://certificates.cs50.io/3f44e2d8-a347-4e0a-85ff-9635553ead5b.pdf?size=letter",
+    },
+    {
       name: "CI/CD Fullstack Open Course",
       institution: "University of Helsinki",
       img: "/helsinki.png",
@@ -92,7 +98,7 @@ const Me = () => {
         <CardHeader className="flex flex-col items-center">
           <Avatar className="w-40 h-40">
             <AvatarImage src="/pfp.jpg" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>OP</AvatarFallback>
           </Avatar>
 
           <CardTitle className="tracking-widest flex text-2xl items-center">
@@ -116,8 +122,9 @@ const Me = () => {
         </CardHeader>
         <CardContent>
           <p>
-            I love to <Label>solve problems and build things </Label>. I'm
-            passionate about web technologies and I'm always looking for new
+            I love to{" "}
+            <Label>learn new concepts, solve problems and build things </Label>.
+            I'm passionate about web technologies and I'm always looking for new
             challenges. I'm currently studying software engineering at{" "}
             <a href="https://www.espe.edu.ec/" target="_blank" rel="noreferrer">
               <Label className="cursor-pointer">
@@ -190,11 +197,26 @@ const Me = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          <Accordion className="w-full pt-10" type="single" collapsible>
+            <AccordionItem className=" max-w-full" value="item-1">
+              <AccordionTrigger className="bg-white">MBTI</AccordionTrigger>
+              <AccordionContent className="flex flex-row items-center justify-center gap-4 md:px-16">
+                <p className="text-text text-2xl dark:text-darkText">
+                  I'm an INTP ᕙ⁠(⁠⇀⁠‸⁠↼⁠‶⁠)⁠ᕗ
+                </p>
+                <a href="https://www.16personalities.com/intp-personality" target="_blank" rel="noreferrer">
+                  <Image
+                    src={"/intp.png"}
+                    alt={"INTP image"}
+                    width={300}
+                    height={300}
+                  ></Image>
+                </a>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
-        {/* <CardFooter className="flex justify-between">
-          <Button>Cancel</Button>
-          <Button variant="neutral">Deploy</Button>
-        </CardFooter> */}
       </Card>
     </TabsContent>
   );
