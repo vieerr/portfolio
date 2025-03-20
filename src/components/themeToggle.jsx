@@ -4,11 +4,10 @@ import { LucideMoon, LucideSun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
-export default function DarkModeToggle() {
+export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Ensure the component is mounted before rendering
   useEffect(() => {
     setMounted(true);
   }, []);

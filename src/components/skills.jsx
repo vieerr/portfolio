@@ -1,11 +1,8 @@
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
+  DialogContent, DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import {
   Card,
@@ -15,74 +12,23 @@ import {
   CardTitle,
 } from "./ui/card";
 import { TabsContent } from "./ui/tabs";
-import { LucideFileHeart } from "lucide-react";
-import { LucideFlower } from "lucide-react";
-import { LucideBoxes } from "lucide-react";
 import { Button } from "./ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
+import {
+  frontendSkills,
+  backendSkills,
+  databaseSkills,
+  devOpsSkills,
+  learningSkills,
+} from "@/utils/info";
 
 const Skills = () => {
-  const frontendSkills = [
-    { name: "React", icon: "devicon-react-original", color: "#61DAFB" },
-    {
-      name: "Next.js",
-      icon: "devicon-nextjs-original-wordmark",
-      color: "#000000",
-    },
-    { name: "JavaScript", icon: "devicon-javascript-plain", color: "#F7DF1E" },
-    { name: "HTML5", icon: "devicon-html5-plain", color: "#E34F26" },
-    { name: "CSS3", icon: "devicon-css3-plain", color: "#1572B6" },
-    { name: "TypeScript", icon: "devicon-typescript-plain", color: "#3178C6" },
-    {
-      name: "Tailwind CSS",
-      icon: "devicon-tailwindcss-plain",
-      color: "#38B2AC",
-    },
-    {
-      name: "Styled Components",
-      iconComp: <LucideFileHeart />,
-      color: "#DB7093",
-    },
-    {
-      name: "DaisyUI",
-      iconComp: <LucideFlower />,
-      color: "#123aaa",
-    },
-  ];
-
-  const backendSkills = [
-    { name: "Node.js", icon: "devicon-nodejs-plain", color: "#68A063" },
-    { name: "Python", icon: "devicon-python-plain", color: "#3776AB" },
-    { name: "PHP", icon: "devicon-php-plain", color: "#777BB4" },
-    { name: "GraphQL", icon: "devicon-graphql-plain", color: "#E535AB" },
-  ];
-
-  const databaseSkills = [
-    { name: "PostgreSQL", icon: "devicon-postgresql-plain", color: "#336791" },
-    { name: "MySQL", icon: "devicon-mysql-plain", color: "#4479A1" },
-    { name: "MongoDB", icon: "devicon-mongodb-plain", color: "#47A248" },
-  ];
-
-  const devOpsSkills = [
-    { name: "Git", icon: "devicon-git-plain", color: "#F05032" },
-    { name: "GitHub", icon: "devicon-github-original", color: "#181717" },
-    { name: "Vite", icon: "devicon-vite-plain", color: "#646CFF" },
-  ];
-
-  const learningSkills = [
-    { name: "Rust", icon: "devicon-rust-plain", color: "#000000" },
-    { name: "Zig", icon: "devicon-zig-plain", color: "#F7A41D" },
-    { name: "Go", icon: "devicon-go-plain", color: "#00ADD8" },
-    {
-      name: "Microservices",
-      iconComp: <LucideBoxes />,
-      color: "#6C63FF",
-    },
-    { name: "Docker", icon: "devicon-docker-plain", color: "#2496ED" },
-
-    { name: "AWS", icon: "devicon-amazonwebservices-plain", color: "#FF9900" },
-  ];
-
   const renderSkills = (skills) => {
     return skills.map((skill, index) => (
       <Dialog key={index} className="w-full">
