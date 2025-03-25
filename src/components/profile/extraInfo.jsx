@@ -70,7 +70,7 @@ const ExtraInfo = () => {
       <Accordion className="w-full pt-10" type="single" collapsible>
         <AccordionItem className=" max-w-full" value="item-1">
           <AccordionTrigger className="bg-white">MBTI</AccordionTrigger>
-          <AccordionContent className="flex flex-row items-center justify-center gap-4 md:px-16">
+          <AccordionContent className="flex flex-col md:flex-row items-center justify-center gap-4 md:px-16">
             <p className="text-text text-2xl dark:text-darkText">
               I'm an INTP ᕙ⁠(⁠⇀⁠‸⁠↼⁠‶⁠)⁠ᕗ
             </p>
@@ -94,18 +94,18 @@ const ExtraInfo = () => {
           <AccordionTrigger className="bg-white">
             Operating System
           </AccordionTrigger>
-          <AccordionContent className="flex flex-row items-center justify-center gap-4 md:px-16">
+          <AccordionContent className="flex flex-col md:flex-row items-center justify-center gap-4 md:px-16">
             <p className="text-text text-xl dark:text-darkText">
               I used to develop on Ubuntu but I changed to{" "}
-              <strong> Fedora </strong>, I chose the I3 spin because I liked the
-              idea of a minimal system and since then I've in love with using
-              it.
+              <strong> Fedora</strong>. I chose the I3 spin because I liked the
+              idea of a minimal system with no desktop environment and since
+              then I've been in love with it.
             </p>
             <Image
-              src={"/os.jpg"}
+              src={"/os.png"}
               alt={"My system info (neofetch)"}
-              width={300}
-              height={300}
+              width={400}
+              height={400}
             ></Image>
           </AccordionContent>
         </AccordionItem>
