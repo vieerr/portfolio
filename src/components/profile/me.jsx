@@ -21,8 +21,8 @@ const Me = () => {
     <TabsContent value="me">
       <Card className="w-full md:p-20 md:pt-5">
         <CardHeader className="flex flex-col items-center">
-          <Avatar className="w-40 h-40">
-            <AvatarImage src="/pfp.jpg" />
+          <Avatar className="w-60 h-60">
+            <AvatarImage src="/animatedpfp.webp" />
             <AvatarFallback>OP</AvatarFallback>
           </Avatar>
 
