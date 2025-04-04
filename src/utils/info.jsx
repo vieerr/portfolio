@@ -66,6 +66,7 @@ export const projects = [
       "A web app streamlining pet adoption by centralizing information and connecting adopters with shelters. Simplify the adoption process with this user-friendly platform.",
     tech: [
       "React",
+      "AWS",
       "Javascript",
       "Nextjs",
       "Express",
