@@ -61,25 +61,6 @@ export const projects = [
     url: null,
   },
   {
-    name: "Adogtame",
-    description:
-      "A web app streamlining pet adoption by centralizing information and connecting adopters with shelters. Simplify the adoption process with this user-friendly platform.",
-    tech: [
-      "React",
-      "AWS",
-      "Javascript",
-      "Nextjs",
-      "Express",
-      "MongoDB",
-      "TailwindCSS",
-      "DaisyUI",
-    ],
-    mainImg: "/adogtame.jpg",
-    concept: "Dog adoption",
-    repository: "https://github.com/vieerr/adogtame",
-    url: "https://adogtame-pi.vercel.app/",
-  },
-  {
     name: "Pandemic",
     description:
       "A simulation of pandemic spread using the SIR model (ODE system). Visualize how diseases propagate and understand the impact of interventions with this Python and Unity-powered tool.",
@@ -98,6 +79,25 @@ export const projects = [
     concept: "Website",
     repository: "https://github.com/vieerr/tecnirem",
     url: "https://tecnirem-olivierpas13.vercel.app/",
+  },
+  {
+    name: "Adogtame",
+    description:
+      "*CURRENTLY INACTIVE* A web app streamlining pet adoption by centralizing information and connecting adopters with shelters. Simplify the adoption process with this user-friendly platform.",
+    tech: [
+      "React",
+      "AWS",
+      "Javascript",
+      "Nextjs",
+      "Express",
+      "MongoDB",
+      "TailwindCSS",
+      "DaisyUI",
+    ],
+    mainImg: "/adogtame.jpg",
+    concept: "Dog adoption",
+    repository: "https://github.com/vieerr/adogtame",
+    url: "https://adogtame-pi.vercel.app/",
   },
 ];
 
