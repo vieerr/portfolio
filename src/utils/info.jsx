@@ -17,6 +17,25 @@ export const phrase = [
 
 export const projects = [
   {
+    name: "Trista",
+    description:
+      "Sistema de facturación tipo ERP simplificado para PYMEs, inspirado en Alegra. Desarrollado con arquitectura de microfrontends para garantizar escalabilidad y despliegues independientes.",
+    tech: [
+      "Vue 3",
+      "TypeScript",
+      "Vite",
+      "Module Federation",
+      "TailwindCSS",
+      "PrimeVue",
+      "Pinia",
+      "Microfrontends",
+    ],
+    concept: "ERP para PYMEs",
+    mainImg: "/trista.png",
+    repository: "https://github.com/vieerr/trista",
+    url: "https://trista.vercel.app/",
+  },
+  {
     name: "Dearmom",
     description:
       "A voice-to-text web app designed to help children who cannot write send heartfelt letters to loved ones. Built with accessibility in mind for a software usability class project.",
@@ -173,10 +192,16 @@ export const social = [
 
 export const frontendSkills = [
   { name: "React", icon: "devicon-react-original", color: "#61DAFB" },
+  { name: "Vue.js", icon: "devicon-vuejs-plain", color: "#42b883" },
   {
     name: "Next.js",
     icon: "devicon-nextjs-original-wordmark",
     color: "#000000",
+  },
+  {
+    name: "Microfrontends",
+    iconComp: <LucideBoxes />,
+    color: "#6C63FF",
   },
   { name: "JavaScript", icon: "devicon-javascript-plain", color: "#F7DF1E" },
   { name: "HTML5", icon: "devicon-html5-plain", color: "#E34F26" },
@@ -204,6 +229,8 @@ export const backendSkills = [
   { name: "Python", icon: "devicon-python-plain", color: "#3776AB" },
   { name: "PHP", icon: "devicon-php-plain", color: "#777BB4" },
   { name: "GraphQL", icon: "devicon-graphql-plain", color: "#E535AB" },
+  { name: "Express", icon: "devicon-express-original", color: "#000000" },
+  { name: "FastAPI", icon: "devicon-fastapi-plain", color: "#009688" },
 ];
 
 export const databaseSkills = [
@@ -216,6 +243,8 @@ export const devOpsSkills = [
   { name: "Git", icon: "devicon-git-plain", color: "#F05032" },
   { name: "GitHub", icon: "devicon-github-original", color: "#181717" },
   { name: "Vite", icon: "devicon-vite-plain", color: "#646CFF" },
+  { name: "AWS", icon: "devicon-amazonwebservices-plain", color: "#FF9900" },
+  { name: "Google Cloud", icon: "devicon-googlecloud-plain", color: "#4285F4" },
 ];
 
 export const learningSkills = [
